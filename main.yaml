@@ -2,7 +2,7 @@ name: py
 
 on:
 schedule:
-- cron: “0 0 * * *” #runs at 00:00 UTC everyday
+- cron: “18 50 * * *” #runs at 00:00 UTC everyday
 
 jobs:
 build:
@@ -17,7 +17,7 @@ runs-on: ubuntu-latest
        python-version: 3.8 #install the python needed
    - name: execute py script # run the run.py to get the latest data
      run: |
-       python run.py
+       python main.py
      env:
        key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
    - name: export index
